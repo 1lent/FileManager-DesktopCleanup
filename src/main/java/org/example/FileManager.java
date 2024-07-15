@@ -19,6 +19,7 @@ import java.util.List;
  */
 
 public class FileManager {
+
     public static void main(String[] args) {
 
 
@@ -26,6 +27,7 @@ public class FileManager {
         if (folder.exists() || folder.mkdir()) {
             System.out.println("Folder " + folder.getName() + " created successfully");
             mp3(); // Run mp3 method if creates folder
+            png(); // Run png method if creates file manager folder
 
         } else {
             System.out.println("Folder " + folder.getName() + "In " + folder.getPath() + " could not be created");
@@ -44,7 +46,6 @@ public class FileManager {
 
         if (mp3Folder.exists() || mp3Folder.mkdir()) {
             System.out.println("Folder " + mp3Folder.getName() + " created successfully");
-
             System.out.println(desktop);
             File[] files = desktop.listFiles();
             List<File> mp3Files = Arrays.stream(files).filter(f -> f.getName().endsWith(extension)).toList();
@@ -53,13 +54,37 @@ public class FileManager {
                     Files.move(Paths.get(mp3File.getAbsolutePath()), Paths.get(mp3Folder.getAbsolutePath(), mp3File.getName()), StandardCopyOption.REPLACE_EXISTING);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
-
                 }
             });
 
         } else {
             System.out.println("Folder " + mp3Folder.getName() + "In " + desktop.getPath() + " could not be created");
         }
+    }
+    public static void png() {
+        File pngFolder = new File("D:\\FileManager\\Png");
+        String extension = "png";
+        File desktop = FileSystemView.getFileSystemView().getHomeDirectory();
+
+        if (pngFolder.exists() || pngFolder.mkdir()) {
+
+            System.out.println("Folder " + pngFolder.getName() + " created successfully");
+            System.out.println(pngFolder);
+            File[] files = desktop.listFiles();
+            List<File> pngFiles = Arrays.stream(files).filter(f -> f.getName().endsWith(extension)).toList();
+            pngFiles.forEach(pngFile -> {
+                try {
+                    Files.move(Paths.get(pngFile.getAbsolutePath()), Paths.get(pngFolder.getAbsolutePath(), pngFile.getName()), StandardCopyOption.REPLACE_EXISTING);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+
+            });
+
+        } else {
+            System.out.println("Folder " + pngFolder.getName() + "In " + pngFolder.getPath() + " could not be created");
+        }
+
 
     }
 
