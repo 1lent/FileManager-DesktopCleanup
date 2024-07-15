@@ -11,3 +11,7 @@
 
 - Supported File types 
     ↳ mp3, mp4, mkv, png, jpg, txt, jar
+
+
+![image](https://github.com/user-attachments/assets/e07ef565-825e-4be4-a5b4-3f02e047933b)
+
