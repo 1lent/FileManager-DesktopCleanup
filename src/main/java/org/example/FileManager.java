@@ -1,10 +1,8 @@
 package org.example;
-import org.apache.commons.io.FilenameUtils;
 
 import javax.swing.filechooser.FileSystemView;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
@@ -20,7 +18,7 @@ import java.util.List;
 
 public class FileManager {
 
-    public static void main(String[] args) {
+    public static void main() {
 
 
         File folder = new File("D:\\FileManager");
