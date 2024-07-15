@@ -7,4 +7,11 @@
  # File Manager
 
  
-- Moves all mp3,jpg,png  files to a folder for each extension under the FileManager Folder in the D drive it creates. More file types soon.
+- Moves files to a folder for each extension under the FileManager Folder which is created under the D drive
+
+- Supported File types 
+    ↳ mp3, mp4, mkv, png, jpg, txt, jar
+
+
+![image](https://github.com/user-attachments/assets/e07ef565-825e-4be4-a5b4-3f02e047933b)
+
