@@ -28,6 +28,7 @@ public class FileManager {
             System.out.println("Folder " + folder.getName() + " created successfully");
             mp3(); // Run mp3 method if creates folder
             png(); // Run png method if creates file manager folder
+            jpg();
 
         } else {
             System.out.println("Folder " + folder.getName() + "In " + folder.getPath() + " could not be created");
@@ -83,6 +84,33 @@ public class FileManager {
 
         } else {
             System.out.println("Folder " + pngFolder.getName() + "In " + pngFolder.getPath() + " could not be created");
+        }
+
+
+    }
+
+    public static void jpg() {
+        File jpgFolder = new File("D:\\FileManager\\Jpg");
+        String extension = "jpg";
+        File desktop = FileSystemView.getFileSystemView().getHomeDirectory();
+
+        if (jpgFolder.exists() || jpgFolder.mkdir()) {
+
+            System.out.println("Folder " + jpgFolder.getName() + " created successfully");
+            System.out.println(jpgFolder);
+            File[] files = desktop.listFiles();
+            List<File> jpgFiles = Arrays.stream(files).filter(f -> f.getName().endsWith(extension)).toList();
+            jpgFiles.forEach(jpgFile -> {
+                try {
+                    Files.move(Paths.get(jpgFile.getAbsolutePath()), Paths.get(jpgFolder.getAbsolutePath(), jpgFile.getName()), StandardCopyOption.REPLACE_EXISTING);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+
+            });
+
+        } else {
+            System.out.println("Folder " + jpgFolder.getName() + "In " + jpgFolder.getPath() + " could not be created");
         }
 
 
