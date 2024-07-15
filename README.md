@@ -15,5 +15,6 @@
 
 
 ![image](https://github.com/user-attachments/assets/e07ef565-825e-4be4-a5b4-3f02e047933b)
-https://i.e-z.host/📸clippedbylent/z8pw3xnk.png
+![image](https://github.com/user-attachments/assets/1453a83f-d17e-4e39-b40f-3ef405b4841f)
+
 
