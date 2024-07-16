@@ -35,6 +35,7 @@ public class FileManager {
             php();
             go();
             ts();
+            py();
 
         } else {
             System.out.println("Folder " + folder.getName() + "In " + folder.getPath() + " could not be created");
