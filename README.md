@@ -14,7 +14,7 @@
     ↳ mp3, mp4, mkv, png, jpg, txt, jar
 
 
-![image](https://github.com/user-attachments/assets/e07ef565-825e-4be4-a5b4-3f02e047933b)
+![image](https://github.com/user-attachments/assets/d2a3a158-781f-40f0-bd08-4a9168767a71)
 ![image](https://github.com/user-attachments/assets/1453a83f-d17e-4e39-b40f-3ef405b4841f)
 
 
