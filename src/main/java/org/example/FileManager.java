@@ -31,6 +31,10 @@ public class FileManager {
             mkv();
             txt();
             jar();
+            js();
+            php();
+            go();
+            ts();
 
         } else {
             System.out.println("Folder " + folder.getName() + "In " + folder.getPath() + " could not be created");
@@ -223,7 +227,7 @@ public class FileManager {
     }
     public static void ts() {
         File tsFolder = new File("D:\\FileManager\\Typescript");
-        String extension = "ts";
+        String extension = "TS";
         File desktop = FileSystemView.getFileSystemView().getHomeDirectory();
 
         if (tsFolder.exists() || tsFolder.mkdir()) {
@@ -276,7 +280,7 @@ public class FileManager {
     }
 
     public static void php() {
-        File phpFolder = new File("D:\\FileManager\\PHP");
+        File phpFolder = new File("D:\\FileManager\\php");
         String extension = "php";
         File desktop = FileSystemView.getFileSystemView().getHomeDirectory();
 
@@ -303,7 +307,7 @@ public class FileManager {
     }
 
     public static void js() {
-        File jsFolder = new File("D:\\FileManager\\Javascript");
+        File jsFolder = new File("D:\\FileManager\\javascript");
         String extension = "js";
         File desktop = FileSystemView.getFileSystemView().getHomeDirectory();
 
@@ -313,9 +317,9 @@ public class FileManager {
             System.out.println(jsFolder);
             File[] files = desktop.listFiles();
             List<File> jsFiles = Arrays.stream(files).filter(f -> f.getName().endsWith(extension)).toList();
-            jsFiles.forEach(tsFile -> {
+            jsFiles.forEach(jsFile -> {
                 try {
-                    Files.move(Paths.get(tsFile.getAbsolutePath()), Paths.get(jsFolder.getAbsolutePath(), tsFile.getName()), StandardCopyOption.REPLACE_EXISTING);
+                    Files.move(Paths.get(jsFile.getAbsolutePath()), Paths.get(jsFolder.getAbsolutePath(), jsFile.getName()), StandardCopyOption.REPLACE_EXISTING);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
@@ -329,5 +333,31 @@ public class FileManager {
 
     }
 
+    public static void py() {
+        File pyFolder = new File("D:\\FileManager\\Python");
+        String extension = "py";
+        File desktop = FileSystemView.getFileSystemView().getHomeDirectory();
+
+        if (pyFolder.exists() || pyFolder.mkdir()) {
+
+            System.out.println("Folder " + pyFolder.getName() + " created successfully");
+            System.out.println(pyFolder);
+            File[] files = desktop.listFiles();
+            List<File> pyFiles = Arrays.stream(files).filter(f -> f.getName().endsWith(extension)).toList();
+            pyFiles.forEach(pyFile -> {
+                try {
+                    Files.move(Paths.get(pyFile.getAbsolutePath()), Paths.get(pyFolder.getAbsolutePath(), pyFile.getName()), StandardCopyOption.REPLACE_EXISTING);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+
+            });
+
+        } else {
+            System.out.println("Folder " + pyFolder.getName() + "In " + pyFolder.getPath() + " could not be created");
+        }
+
+
+    }
 
 }
