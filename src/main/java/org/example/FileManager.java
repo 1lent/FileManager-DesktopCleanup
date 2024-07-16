@@ -221,6 +221,113 @@ public class FileManager {
 
 
     }
+    public static void ts() {
+        File tsFolder = new File("D:\\FileManager\\Typescript");
+        String extension = "ts";
+        File desktop = FileSystemView.getFileSystemView().getHomeDirectory();
+
+        if (tsFolder.exists() || tsFolder.mkdir()) {
+
+            System.out.println("Folder " + tsFolder.getName() + " created successfully");
+            System.out.println(tsFolder);
+            File[] files = desktop.listFiles();
+            List<File> tsFiles = Arrays.stream(files).filter(f -> f.getName().endsWith(extension)).toList();
+            tsFiles.forEach(tsFile -> {
+                try {
+                    Files.move(Paths.get(tsFile.getAbsolutePath()), Paths.get(tsFolder.getAbsolutePath(), tsFile.getName()), StandardCopyOption.REPLACE_EXISTING);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+
+            });
+
+        } else {
+            System.out.println("Folder " + tsFolder.getName() + "In " + tsFolder.getPath() + " could not be created");
+        }
+
+
+    }
+
+    public static void go() {
+        File goFolder = new File("D:\\FileManager\\Go");
+        String extension = "go";
+        File desktop = FileSystemView.getFileSystemView().getHomeDirectory();
+
+        if (goFolder.exists() || goFolder.mkdir()) {
+
+            System.out.println("Folder " + goFolder.getName() + " created successfully");
+            System.out.println(goFolder);
+            File[] files = desktop.listFiles();
+            List<File> goFiles = Arrays.stream(files).filter(f -> f.getName().endsWith(extension)).toList();
+            goFiles.forEach(goFile -> {
+                try {
+                    Files.move(Paths.get(goFile.getAbsolutePath()), Paths.get(goFolder.getAbsolutePath(), goFile.getName()), StandardCopyOption.REPLACE_EXISTING);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+
+            });
+
+        } else {
+            System.out.println("Folder " + goFolder.getName() + "In " + goFolder.getPath() + " could not be created");
+        }
+
+
+    }
+
+    public static void php() {
+        File phpFolder = new File("D:\\FileManager\\PHP");
+        String extension = "php";
+        File desktop = FileSystemView.getFileSystemView().getHomeDirectory();
+
+        if (phpFolder.exists() || phpFolder.mkdir()) {
+
+            System.out.println("Folder " + phpFolder.getName() + " created successfully");
+            System.out.println(phpFolder);
+            File[] files = desktop.listFiles();
+            List<File> phpFiles = Arrays.stream(files).filter(f -> f.getName().endsWith(extension)).toList();
+            phpFiles.forEach(phpFile -> {
+                try {
+                    Files.move(Paths.get(phpFile.getAbsolutePath()), Paths.get(phpFolder.getAbsolutePath(), phpFile.getName()), StandardCopyOption.REPLACE_EXISTING);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+
+            });
+
+        } else {
+            System.out.println("Folder " + phpFolder.getName() + "In " + phpFolder.getPath() + " could not be created");
+        }
+
+
+    }
+
+    public static void js() {
+        File jsFolder = new File("D:\\FileManager\\Javascript");
+        String extension = "js";
+        File desktop = FileSystemView.getFileSystemView().getHomeDirectory();
+
+        if (jsFolder.exists() || jsFolder.mkdir()) {
+
+            System.out.println("Folder " + jsFolder.getName() + " created successfully");
+            System.out.println(jsFolder);
+            File[] files = desktop.listFiles();
+            List<File> jsFiles = Arrays.stream(files).filter(f -> f.getName().endsWith(extension)).toList();
+            jsFiles.forEach(tsFile -> {
+                try {
+                    Files.move(Paths.get(tsFile.getAbsolutePath()), Paths.get(jsFolder.getAbsolutePath(), tsFile.getName()), StandardCopyOption.REPLACE_EXISTING);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+
+            });
+
+        } else {
+            System.out.println("Folder " + jsFolder.getName() + "In " + jsFolder.getPath() + " could not be created");
+        }
+
+
+    }
 
 
 }
