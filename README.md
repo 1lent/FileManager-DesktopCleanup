@@ -11,7 +11,7 @@
 - Added button support 
 
 - Supported File types 
-    ↳ mp3, mp4, mkv, png, jpg, txt, jar
+    ↳ mp3, mp4, mkv, png, jpg, txt, jar, php, go, ts, js, py
 
 
 ![image](https://github.com/user-attachments/assets/d2a3a158-781f-40f0-bd08-4a9168767a71)
